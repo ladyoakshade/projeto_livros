@@ -1,0 +1,452 @@
+/* ========================================
+   Estilos Personalizados - Biblioteca
+   Tema Rosa Feminino
+   ======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ========== Cores Base ========== */
+:root {
+    --cor-principal: #E91E63;
+    --cor-secundaria: #FF5983;
+    --cor-claro: #FFE4F0;
+    --cor-medio: #FF9AC4;
+    --branco: #FFFFFF;
+    --texto-escuro: #333333;
+    --borda-cinza: #E0E0E0;
+}
+
+/* ========== Body e Estrutura Geral ========== */
+body {
+    background: linear-gradient(135deg, #ffe4f0 0%, #fff0f5 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: var(--texto-escuro);
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+.conteudo {
+    flex: 1;
+    padding: 25px;
+}
+
+/* ========== Header ========== */
+header {
+    background: linear-gradient(135deg, #E91E63 0%, #FF5983 100%);
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    font-size: 28px;
+    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .biblioteca-titulo {
+    flex: 1;
+    text-align: center;
+}
+
+header .header-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+header .header-actions .usuario-info {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* ========== Footer ========== */
+footer {
+    background: linear-gradient(135deg, #E91E63 0%, #FF5983 100%);
+    padding: 12px;
+    color: white;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* ========== Títulos e Headings ========== */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    color: var(--cor-principal);
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 28px;
+    margin-top: 20px;
+}
+
+/* ========== Botões ========== */
+.btn {
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+/* Botão Primário (Azul/Rosa Principal) */
+.btn-primary {
+    background: linear-gradient(135deg, #E91E63 0%, #FF5983 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #C2185B 0%, #E91E63 100%);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(233, 30, 99, 0.3);
+}
+
+/* Botão Sucesso */
+.btn-success {
+    background: linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%);
+    color: white;
+}
+
+.btn-success:hover {
+    background: linear-gradient(135deg, #388E3C 0%, #4CAF50 100%);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+/* Botão Aviso/Warning */
+.btn-warning {
+    background: linear-gradient(135deg, #FFC107 0%, #FFD54F 100%);
+    color: #333;
+}
+
+.btn-warning:hover {
+    background: linear-gradient(135deg, #FFA000 0%, #FFC107 100%);
+    color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+}
+
+/* Botão Perigo */
+.btn-danger {
+    background: linear-gradient(135deg, #F44336 0%, #EF5350 100%);
+    color: white;
+}
+
+.btn-danger:hover {
+    background: linear-gradient(135deg, #D32F2F 0%, #F44336 100%);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(244, 67, 54, 0.3);
+}
+
+/* Botão Custom */
+.btn-custom {
+    background: linear-gradient(135deg, #E91E63 0%, #FF5983 100%);
+    color: white;
+}
+
+.btn-custom:hover {
+    background: linear-gradient(135deg, #C2185B 0%, #E91E63 100%);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ========== Formulários ========== */
+.form-control,
+.form-select {
+    border: 2px solid var(--borda-cinza);
+    border-radius: 12px;
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--cor-principal);
+    box-shadow: 0 0 0 0.2rem rgba(233, 30, 99, 0.15);
+    outline: none;
+}
+
+.form-control::placeholder {
+    color: #999;
+    font-weight: 400;
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--cor-principal);
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+/* ========== Tabelas ========== */
+.table {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table thead {
+    background: linear-gradient(135deg, #E91E63 0%, #FF5983 100%);
+    color: white;
+}
+
+.table thead th {
+    border: none;
+    padding: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+.table tbody td {
+    padding: 15px;
+    border-color: var(--borda-cinza);
+    vertical-align: middle;
+}
+
+.table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.table tbody tr:hover {
+    background-color: #fff0f5;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+/* ========== Cards ========== */
+.card {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 25px rgba(233, 30, 99, 0.15);
+    transform: translateY(-3px);
+}
+
+.card-body {
+    padding: 25px;
+}
+
+.card-header {
+    background: linear-gradient(135deg, #E91E63 0%, #FF5983 100%);
+    color: white;
+    border: none;
+    border-radius: 16px 16px 0 0;
+    padding: 20px;
+    font-weight: 700;
+}
+
+/* ========== Alerts ========== */
+.alert {
+    border: none;
+    border-radius: 12px;
+    padding: 15px 20px;
+    font-weight: 500;
+    animation: slideIn 0.3s ease;
+}
+
+.alert-danger {
+    background: linear-gradient(135deg, rgba(244, 67, 54, 0.1) 0%, rgba(244, 67, 54, 0.05) 100%);
+    color: #D32F2F;
+    border-left: 4px solid #F44336;
+}
+
+.alert-success {
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.1) 0%, rgba(76, 175, 80, 0.05) 100%);
+    color: #2E7D32;
+    border-left: 4px solid #4CAF50;
+}
+
+.alert-warning {
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, rgba(255, 193, 7, 0.05) 100%);
+    color: #F57F17;
+    border-left: 4px solid #FFC107;
+}
+
+.alert-info {
+    background: linear-gradient(135deg, rgba(33, 150, 243, 0.1) 0%, rgba(33, 150, 243, 0.05) 100%);
+    color: #1565C0;
+    border-left: 4px solid #2196F3;
+}
+
+/* ========== Links ========== */
+a {
+    color: var(--cor-principal);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+a:hover {
+    color: var(--cor-secundaria);
+    text-decoration: underline;
+}
+
+.alert-link {
+    color: inherit;
+    font-weight: 700;
+}
+
+/* ========== Container ========== */
+.container {
+    max-width: 1200px;
+    padding: 20px;
+}
+
+/* ========== Util Classes ========== */
+.text-center {
+    text-align: center;
+}
+
+.text-end {
+    text-align: right;
+}
+
+.mt-4 {
+    margin-top: 2rem !important;
+}
+
+.mb-3 {
+    margin-bottom: 1rem !important;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+.mt-3 {
+    margin-top: 1rem !important;
+}
+
+.shadow-lg {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* ========== Animações ========== */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== Responsivo ========== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    header .biblioteca-titulo {
+        font-size: 22px;
+    }
+
+    .conteudo {
+        padding: 15px;
+        margin-bottom: 100px;
+    }
+
+    .table {
+        font-size: 12px;
+    }
+
+    .table thead th,
+    .table tbody td {
+        padding: 10px;
+    }
+
+    .btn {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    footer {
+        position: static;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-bottom: 100px;
+    }
+
+    header {
+        font-size: 18px;
+        padding: 15px;
+    }
+
+    .conteudo {
+        padding: 10px;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .card {
+        border-radius: 12px;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+}
+
+/* ========== Scrollbar Styling ========== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--claro);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--cor-principal);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--cor-secundaria);
+}

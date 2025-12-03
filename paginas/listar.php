@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . "/../config/auth.php";
 require_once __DIR__ . "/../config/conexao.php";
 require_once __DIR__ . "/../modelos/Livro.php";
 
@@ -12,17 +13,18 @@ include __DIR__ . "/../public/cabecalho.php";
     <h2 class="text-center mb-4">Lista de Livros</h2>
 
     <div class="text-end mb-3">
-        <a href="cadastrar.php" class="btn btn-primary">Cadastrar Novo Livro</a>
+        <a href="cadastrar.php" class="btn btn-primary">+ Cadastrar Novo Livro</a>
     </div>
 
     <table class="table table-bordered table-striped text-center">
-        <thead class="table-dark">
+        <thead>
             <tr>
                 <th>ID</th>
                 <th>Título</th>
                 <th>Autor</th>
                 <th>Ano</th>
                 <th>Editora</th>
+                <th>ISBN</th>
                 <th>Ações</th>
             </tr>
         </thead>
@@ -34,6 +36,7 @@ include __DIR__ . "/../public/cabecalho.php";
                     <td><?= $l['autor'] ?></td>
                     <td><?= $l['ano_publicacao'] ?></td>
                     <td><?= $l['editora'] ?></td>
+                    <td><?= $l['isbn'] ?></td>
                     <td>
                         <a href="editar.php?id=<?= $l['id_livro'] ?>" class="btn btn-warning btn-sm">Editar</a>
                         <a href="excluir.php?id=<?= $l['id_livro'] ?>"

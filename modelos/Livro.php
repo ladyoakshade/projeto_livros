@@ -8,16 +8,17 @@ class Livro {
         $this->pdo = $pdo;
     }
 
-    public function inserir($titulo, $autor, $ano_publicacao, $editora) {
+    public function inserir($titulo, $autor, $ano_publicacao, $editora, $isbn) {
         try {
-            $sql = "INSERT INTO livros (titulo, autor, ano_publicacao, editora)
-                    VALUES (:titulo, :autor, :ano_publicacao, :editora)";
+            $sql = "INSERT INTO livros (titulo, autor, ano_publicacao, editora, isbn)
+                    VALUES (:titulo, :autor, :ano_publicacao, :editora, :isbn)";
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute([
                 ':titulo' => $titulo,
                 ':autor' => $autor,
                 ':ano_publicacao' => $ano_publicacao,
-                ':editora' => $editora
+                ':editora' => $editora,
+                ':isbn' => $isbn
             ]);
         } catch (PDOException $e) {
             die("Erro ao inserir: " . $e->getMessage());
@@ -36,9 +37,9 @@ class Livro {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function atualizar($id, $titulo, $autor, $ano_publicacao, $editora) {
+    public function atualizar($id, $titulo, $autor, $ano_publicacao, $editora, $isbn) {
         $sql = "UPDATE livros
-                SET titulo = :titulo, autor = :autor, ano_publicacao = :ano_publicacao, editora = :editora
+                SET titulo = :titulo, autor = :autor, ano_publicacao = :ano_publicacao, editora = :editora, isbn = :isbn
                 WHERE id_livro = :id";
 
         $stmt = $this->pdo->prepare($sql);
@@ -47,7 +48,8 @@ class Livro {
             ':titulo' => $titulo,
             ':autor' => $autor,
             ':ano_publicacao' => $ano_publicacao,
-            ':editora' => $editora
+            ':editora' => $editora,
+            ':isbn' => $isbn
         ]);
     }
 

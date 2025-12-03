@@ -1,3 +1,8 @@
+<?php
+if (!isset($_SESSION)) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,43 +12,28 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <style>
-        body {
-            background: #ffe4f0;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+    <!-- CSS Personalizado -->
+    <link href="../public/estilo.css" rel="stylesheet">
 
-        header {
-            background: #ff9ac4;
-            padding: 20px;
-            text-align: center;
-            color: white;
-            font-weight: bold;
-            font-size: 26px;
-        }
-
-        .conteudo {
-            flex: 1;
-            padding: 25px;
-        }
-
-        a.btn-custom {
-            background: #ff6fa6;
-            color: white;
-        }
-        a.btn-custom:hover {
-            background: #e0558c;
-            color: white;
-        }
-
-    </style>
 </head>
 <body>
 
 <header>
-    📚 Biblioteca
+    <div class="biblioteca-titulo">
+        📚 Biblioteca
+    </div>
+    <?php if (isset($_SESSION['id_usuario'])): ?>
+        <div class="header-actions">
+            <div class="usuario-info">
+                Olá, <?= htmlspecialchars($_SESSION['nome']) ?>
+            </div>
+            <a href="../paginas/logout.php" class="btn btn-light btn-sm">Sair</a>
+        </div>
+    <?php else: ?>
+        <div class="header-actions">
+            <a href="../paginas/login.php" class="btn btn-light btn-sm">Entrar</a>
+        </div>
+    <?php endif; ?>
 </header>
 
 <div class="conteudo container">
